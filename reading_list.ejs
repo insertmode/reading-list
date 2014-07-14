@@ -1,8 +1,16 @@
 <div class='reading_list'>
     <% if (typeof bookmarklet !== 'undefined') { %>
-        <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>">:::</a>
+        <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>">!! S01E01</a>
     <% } %>
+    <ul>
     <% resources.forEach(function(resource) { %>
-        <h1>Hello <%= resource.title  %></h1>
+        <li>
+            <a href="<%= resource.entry %>"><h1><%= resource.title  %></h1></a>
+            <% if (resource.pages) { %>
+                <span>(<%= resource.pages.length %> pages)</span>
+            <% } %>
+            <p><%= resource.description %></p>
+        </li>
     <% }); %>
+    </ul>
 </div>
