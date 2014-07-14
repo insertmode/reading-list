@@ -1,0 +1,16 @@
+---
+title: Create your account on Github
+entry: https://github.com/
+pages:
+  - /.*\/github.com/
+  - /.*\/github.com\/join\/plan/
+description: |
+    Go to github.com and create your account.
+---
+title: Create a repository on Github
+entry: https://github.com/
+pages:
+  - /.*\/github.com\/new/
+  - /.*\/github.com\/[^/]/message-to-the-world
+description: |
+    Go to github.com and create a new repository called `message-to-the-world`

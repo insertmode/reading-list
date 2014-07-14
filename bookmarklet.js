@@ -1,7 +1,3 @@
-//var fs = require('fs');
-//var json = require('./'+process.env.READINGLISTJSON);
-//var json = fs.readFileSync(process.env.READINGLISTJSON, 'utf8');
-//var rl = JSON.parse(json);
-var rl = require('reading_list');
+// we expect READING_LIST_DATA to be defined
 var render = require('./render');
-console.log(render(rl));
+console.log(render(READING_LIST_DATA));

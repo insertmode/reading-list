@@ -1,3 +1,8 @@
 <div class='reading_list'>
-    <h1>Hello <%= hello %></h1>
+    <% if (typeof bookmarklet !== 'undefined') { %>
+        <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>">:::</a>
+    <% } %>
+    <% resources.forEach(function(resource) { %>
+        <h1>Hello <%= resource.title  %></h1>
+    <% }); %>
 </div>
