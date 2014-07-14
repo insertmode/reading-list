@@ -3,4 +3,5 @@
 //var json = fs.readFileSync(process.env.READINGLISTJSON, 'utf8');
 //var rl = JSON.parse(json);
 var rl = require('reading_list');
-console.log(rl);
+var render = require('./render');
+console.log(render(rl));

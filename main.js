@@ -8,5 +8,6 @@ b.add('./bookmarklet.js');
 }));*/
 
 //b.transform('brfs');
+b.transform('ejsify');
 b.require('./my_readinglist.json', {expose: 'reading_list'})
 b.bundle().pipe(process.stdout);
