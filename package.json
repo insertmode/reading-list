@@ -1,0 +1,32 @@
+{
+  "name": "insertmode-reading-list",
+  "description": "a link-list as HTML, bookmarklet and Chrome extension",
+  "version": "0.0.2",
+  "homepage": "https://github.com/insertmode/reading-list/",
+  "userscript": {
+    "include": "*",
+    "namespace": "http://www.insert-mode.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/insertmode/reading-list.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "make",
+    "test": "lab test/*.js"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insertmode/reading-list/issues"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "brfs": "^1.1.2",
+    "browserify": "^4.1.10"
+ }
+}
