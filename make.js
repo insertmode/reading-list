@@ -2,12 +2,14 @@ var fs = require('fs');
 var yaml = require('js-yaml');
 var resumer = require('resumer');
 var ejs = require('ejs');
+var inspect = require('util').inspect;
 
 // Create Rsource List from yaml docs
 var yamlDocs = [];
 yaml.safeLoadAll(fs.readFileSync('my_resources.yaml', 'utf8'), function(doc) {
     yamlDocs.push(doc);
 });
+console.log(inspect(yamlDocs, {depth: null}));
 
 // turn resources into a json string stream
 var json = JSON.stringify({

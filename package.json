@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "watchify": "^0.10.2",
-    "beefy": "^2.0.3"
+    "beefy": "^2.0.3",
+    "lab": "^3.2.1"
   },
   "dependencies": {
     "brfs": "^1.1.2",

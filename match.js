@@ -1,0 +1,33 @@
+// compare a string to a string or a regex
+function isMatch(r, s) {
+    // is r a regexp?
+    if (r[0] === '/' && r[r.length-1] === '/') {
+        r = new RegExp(r.substr(1, r.length-2));
+        return r.test(s);
+    }
+    return r == s;
+}
+
+
+// return the index of the reading list item that
+// the student is currently looking at (the current url is passed as href)
+module.exports = function(rl, href) {
+    for(var i = 0; i<rl.resources.length; ++i) {
+        var resource = rl.resources[i];
+        // check the pages first
+        if (resource.pages && resource.pages.length) {
+            for(var ii=0; ii<resource.pages.length; ++ii) {
+                var page = resource.pages[ii];
+                if (typeof page === 'string') {
+                    if (isMatch(page, href)) return i;
+                } else {
+                    if (isMatch(page.regex, href)) return i;
+                }
+            }
+        }
+        // now check resource's entry
+        if (isMatch(resource.entry, href)) return i;
+    }
+    // found no match
+    return -1;
+};
