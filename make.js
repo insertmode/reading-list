@@ -21,6 +21,7 @@ var browserify = require('browserify');
 var b = browserify();
 b.add('./bookmarklet.js');
 b.transform('ejsify');
+b.transform('stylify');
 b.transform('uglifyify');
 
 // combine reading list data as json

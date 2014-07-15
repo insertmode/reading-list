@@ -1,0 +1,45 @@
+body
+    background-color: #ddd
+    font-family: 'helvetica'
+    margin: 0
+    padding: 0
+
+h1
+    font-size: 1em
+    display: inline
+a
+    text-decoration: none
+
+    &:visited
+        color: #999
+
+ul.resource_list
+    background: linear-gradient(
+        to right, 
+        transparent 0em,
+        transparent 1em,
+        red 1em,
+        red 2em,
+        transparent 2em,
+        transparent 100%
+    )
+    margin: 0
+    padding: 0
+    padding-left: 1em
+    margin-top: 2em
+    list-style: none
+    li
+        &:before
+            content: "+"
+            color: blue
+            font-size: 1em 
+
+        p.description, span.pages
+            display: none
+
+    li.current
+        background-color: white
+        a:visited, a
+            color: initial
+        p.description, span.pages
+            display: block
