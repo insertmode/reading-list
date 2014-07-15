@@ -8,7 +8,7 @@ description: |
     Go to github.com and create your account.
 ---
 title: Create a repository on Github
-entry: https://github.com/
+entry: https://github.com/new
 pages:
   - /.*\/github.com\/new/
   - /.*\/github.com\/[^/]/message-to-the-world
