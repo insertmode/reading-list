@@ -77,4 +77,32 @@ Lab.test('matching against pages (regex)', function(done) {
     done();
 });
 
+Lab.test('matching against pages (url property)', function(done) {
+
+    var rl = {
+        resources: [
+            {
+                entry: 'http://a',
+                pages: [{url:'/1/'}, {url:'2'}]
+            },{
+                pages: [{url:'/3{3}|4/'}],
+                entry: 'http://b'
+            }
+        ]           
+    };
+
+    Lab.expect(match(rl, 'http://a')).equals(0);
+    Lab.expect(match(rl, 'http://b')).equals(1);
+    
+    Lab.expect(match(rl, '1')).equals(0);
+    Lab.expect(match(rl, '2')).equals(0);
+    
+    Lab.expect(match(rl, '4')).equals(1);
+    Lab.expect(match(rl, '333')).equals(1);
+    
+    Lab.expect(match(rl, '5')).equals(-1);
+
+    done();
+});
+
 

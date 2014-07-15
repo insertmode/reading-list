@@ -2,7 +2,7 @@
 title: Create your account on Github
 entry: https://github.com/
 pages:
-  - /.*\/github.com/
+  - /.*\/github.com\/$/
   - /.*\/github.com\/join\/plan/
 description: |
     Go to github.com and create your account.
@@ -10,10 +10,10 @@ description: |
 title: Create a repository on Github
 entry: https://github.com/new
 pages:
-  - reges: /.*\/github.com\/new/
+  - url: /.*\/github.com\/new/
     description: |
          **Important** choose `message-to-the-world` as repository name! (Copy and paste from here)
-  - regex: /.*\/github.com\/[^/]/message-to-the-world
+  - url: /.*\/github.com\/[^/]+/message-to-the-worldi/
     description: You can basically ignore all that they say here.
 description: |
     Go to github.com and create a new repository called `message-to-the-world`

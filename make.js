@@ -9,7 +9,7 @@ var yamlDocs = [];
 yaml.safeLoadAll(fs.readFileSync('my_resources.yaml', 'utf8'), function(doc) {
     yamlDocs.push(doc);
 });
-console.log(inspect(yamlDocs, {depth: null}));
+console.error(inspect(yamlDocs, {depth: null}));
 
 // turn resources into a json string stream
 var json = JSON.stringify({
