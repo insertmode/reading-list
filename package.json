@@ -32,6 +32,7 @@
     "through": "^2.3.4",
     "resumer": "0.0.0",
     "ejs": "^1.0.0",
-    "uglifyify": "^2.5.0"
+    "uglifyify": "^2.5.0",
+    "browserify-data": "^0.1.1"
   }
 }
