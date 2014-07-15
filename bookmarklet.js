@@ -1,6 +1,8 @@
 // we expect READING_LIST_DATA to be defined
 var render = require('./render');
-var html = render(READING_LIST_DATA);
+var ctx = READING_LIST_DATA;
+ctx.link_target = '_parent';
+var html = render(ctx);
 console.log(html);
 
 var container = document.createElement('iframe');
