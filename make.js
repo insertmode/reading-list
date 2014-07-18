@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var yaml = require('js-yaml');
 var resumer = require('resumer');
@@ -6,10 +8,10 @@ var inspect = require('util').inspect;
 
 // Create Rsource List from yaml docs
 var yamlDocs = [];
-yaml.safeLoadAll(fs.readFileSync('my_resources.yaml', 'utf8'), function(doc) {
+yaml.safeLoadAll(fs.readFileSync('/dev/stdin', 'utf8'), function(doc) {
     yamlDocs.push(doc);
 });
-console.error(inspect(yamlDocs, {depth: null}));
+//console.error(inspect(yamlDocs, {depth: null}));
 
 // turn resources into a json string stream
 var json = JSON.stringify({
@@ -19,7 +21,7 @@ var json = JSON.stringify({
 // bake reading list into bookmarklet code
 var browserify = require('browserify');
 var b = browserify();
-b.add('./bookmarklet.js');
+b.add(__dirname + '/bookmarklet.js');
 b.transform('ejsify');
 b.transform('stylify');
 b.transform('uglifyify');

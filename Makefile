@@ -2,7 +2,7 @@ BIN:=$(shell npm bin)
 
 readinglist:
 	mkdir -p build
-	node make.js > build/readinglist.html
+	node make.js < my_resources.yaml > build/readinglist.html
 
 iframe:
 	mkdir -p build
