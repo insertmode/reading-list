@@ -7,7 +7,7 @@ var resumer = require('resumer');
 var ejs = require('ejs');
 var inspect = require('util').inspect;
 
-function compileReadingList(yamlInput, cb) {
+function compileReadingList(yamlInput, opts, cb) {
     // Create Rsource List from yaml docs
     var yamlDocs = [];
     yaml.safeLoadAll(yamlInput, function(doc) {
@@ -41,11 +41,10 @@ function compileReadingList(yamlInput, cb) {
         };
         var bookmarklet = ejs.render(bookmarkTemplate, o);
         var readinglist_template = fs.readFileSync(__dirname + '/reading_list.ejs', 'utf8');
-        o = {
-            resources: yamlDocs,
-            bookmarklet: bookmarklet
-        };
-        var html = ejs.render(readinglist_template, o);
+        opts.resources = yamlDocs;
+        opts.bookmarklet = bookmarklet;
+
+        var html = ejs.render(readinglist_template, opts);
         return cb(null, html);
     });
 }

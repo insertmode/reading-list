@@ -21,5 +21,5 @@ insertCSS(styles, {document: doc});
 var index = match(ctx, document.location.href);
 console.log('matching rl entry', index);
 if (index !== -1) {
-    doc.getElementsByTagName('ul')[0].children[index].setAttribute('class','current');
+    doc.getElementsByTagName('ol')[0].children[index].setAttribute('class','current');
 }

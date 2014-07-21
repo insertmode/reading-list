@@ -1,15 +1,15 @@
 <div class='reading_list'>
     <% if (typeof bookmarklet !== 'undefined') { %>
-        <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>">!! S01E01</a>
+        <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>"><%= bookmarklet_link_text || '!!' %></a>
     <% } %>
     <ol class="resource_list">
     <% resources.forEach(function(resource) { %>
         <li>
-            <a href="<%= resource.entry %>" target="<%=typeof link_target === 'undefined'? '_self' : link_target%>"><h1><%= resource.title  %></h1></a>
+            <a href="<%= resource.entry %>" target="<%=typeof link_target === 'undefined'? '_self' : link_target %>"><h1><%= resource.title  %></h1></a>
+            <p class="description"><%= resource.description %></p>
             <% if (resource.pages) { %>
                 <span class="pages">(<%= resource.pages.length %> pages)</span>
             <% } %>
-            <p class="description"><%= resource.description %></p>
         </li>
     <% }); %>
     </ol>
