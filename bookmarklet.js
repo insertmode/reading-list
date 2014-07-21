@@ -18,8 +18,13 @@ doc.body.innerHTML = html;
 
 insertCSS(styles, {document: doc});
 
-var index = match(ctx, document.location.href);
-console.log('matching rl entry', index);
-if (index !== -1) {
-    doc.getElementsByTagName('ol')[0].children[index].setAttribute('class','current');
+var m  = match(ctx, document.location.href);
+console.log('matching rl entry', m);
+if (m !== null) {
+    var step = doc.getElementsByTagName('ol')[0].children[m.step];
+    step.setAttribute('class','current');
+    if (typeof m.page !== 'undefined') {
+        var page = step.getElementsByClassName('page')[m.page];
+        page.setAttribute('class', 'page current');
+    }
 }

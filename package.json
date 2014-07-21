@@ -44,6 +44,7 @@
     "browserify-data": "^0.2.0",
     "insert-css": "insertmode/insert-css",
     "stylify": "^0.1.5",
-    "concat-stream": "^1.4.6"
+    "concat-stream": "^1.4.6",
+    "marked": "^0.3.2"
   }
 }

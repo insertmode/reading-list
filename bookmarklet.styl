@@ -1,5 +1,5 @@
 body
-    background-color: #ddd
+    background-color: #f2f2f2
     font-family: 'helvetica'
     margin: 0
     padding: 0
@@ -9,37 +9,40 @@ h1
     display: inline
 a
     text-decoration: none
-
+    &:hover
+        text-decoration: underline
     &:visited
         color: #999
 
 ol.resource_list
-    background: linear-gradient(
-        to right, 
-        transparent 0em,
-        transparent 1em,
-        red 1em,
-        red 2em,
-        transparent 2em,
-        transparent 100%
-    )
-    margin: 0
-    padding: 0
-    padding-left: 1em
     margin-top: 2em
-    list-style: none
+    margin-right: 1em
+    .page
+        display: none
+ 
+    div.description, span.pages
+        display: none
     li
-        &:before
-            content: "+"
-            color: blue
-            font-size: 1em 
-
-        p.description, span.pages
-            display: none
+        color: #999
+        margin-top: .8em
 
     li.current
-        background-color: white
+        color: #222
         a:visited, a
             color: initial
-        p.description, span.pages
+        div.description, span.pages
             display: block
+        .page.current
+            display: block;
+            background-color: #fefeaa;
+            padding: 0em .5em;
+            border: 1px solid #fff;
+            color: #393838;
+            margin-top: .6em;
+            margin-left: -.5em;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            
+            code
+                background-color: yellow;
+                font-weight: 800;
+                color: red;

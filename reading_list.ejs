@@ -6,9 +6,15 @@
     <% resources.forEach(function(resource) { %>
         <li>
             <a href="<%= resource.entry %>" target="<%=typeof link_target === 'undefined'? '_self' : link_target %>"><h1><%= resource.title  %></h1></a>
-            <p class="description"><%= resource.description %></p>
+            <div class="description"><%- resource.description %></div>
             <% if (resource.pages) { %>
                 <span class="pages">(<%= resource.pages.length %> pages)</span>
+                <% resource.pages.forEach(function(page) { %>
+                    <div class="page">
+                        <%- page.description %>
+                    </div>
+                <% }); %>
+
             <% } %>
         </li>
     <% }); %>

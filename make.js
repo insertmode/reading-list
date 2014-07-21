@@ -6,11 +6,23 @@ var yaml = require('js-yaml');
 var resumer = require('resumer');
 var ejs = require('ejs');
 var inspect = require('util').inspect;
+var marked = require('marked');
+
+function markItDown(o) {
+    for(var key in o) {
+        if (typeof o[key] === 'object') {
+            markItDown(o[key]);
+        } else if (key === 'description') {
+            o[key] = marked(o[key]);
+        }
+    }
+}
 
 function compileReadingList(yamlInput, opts, cb) {
     // Create Rsource List from yaml docs
     var yamlDocs = [];
     yaml.safeLoadAll(yamlInput, function(doc) {
+        markItDown(doc);
         yamlDocs.push(doc);
     });
     //console.error(inspect(yamlDocs, {depth: null}));
@@ -51,7 +63,10 @@ function compileReadingList(yamlInput, opts, cb) {
 
 if (module === require.main) {
     var sink =  concat(function(input) {
-        compileReadingList(input, function(err, html) {
+        var opts = {
+            bookmarklet_link_text: 'SxEx'
+        };
+        compileReadingList(input, opts, function(err, html) {
             if (err) {
                 console.error(err);
                 process.exit(1);

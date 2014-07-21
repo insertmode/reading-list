@@ -22,15 +22,15 @@ module.exports = function(rl, href) {
             for(var ii=0; ii<resource.pages.length; ++ii) {
                 var page = resource.pages[ii];
                 if (typeof page === 'string') {
-                    if (isMatch(page, href)) return i;
+                    if (isMatch(page, href)) return {step:i, page: ii};
                 } else {
-                    if (isMatch(page.url, href)) return i;
+                    if (isMatch(page.url, href)) return {step:i, page: ii};
                 }
             }
         }
         // now check resource's entry
-        if (isMatch(resource.entry, href)) return i;
+        if (isMatch(resource.entry, href)) return {step: i};
     }
     // found no match
-    return -1;
+    return null;
 };

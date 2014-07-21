@@ -13,7 +13,7 @@ pages:
   - url: /.*\/github.com\/new/
     description: |
          **Important** choose `message-to-the-world` as repository name! (Copy and paste from here)
-  - url: /.*\/github.com\/[^/]+/message-to-the-worldi/
+  - url: /.*\/github.com\/[^/]+/message-to-the-world/
     description: You can basically ignore all that they say here.
 description: |
     Go to github.com and create a new repository called `message-to-the-world`
