@@ -2,7 +2,7 @@
     <% if (typeof bookmarklet !== 'undefined') { %>
         <a href="<%= bookmarklet.replace(/\n/g,'').replace(/\r/g,'')  %>">!! S01E01</a>
     <% } %>
-    <ul class="resource_list">
+    <ol class="resource_list">
     <% resources.forEach(function(resource) { %>
         <li>
             <a href="<%= resource.entry %>" target="<%=typeof link_target === 'undefined'? '_self' : link_target%>"><h1><%= resource.title  %></h1></a>
@@ -12,5 +12,5 @@
             <p class="description"><%= resource.description %></p>
         </li>
     <% }); %>
-    </ul>
+    </ol>
 </div>

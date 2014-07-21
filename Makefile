@@ -8,3 +8,5 @@ iframe:
 	mkdir -p build
 	$(BIN)/browserify -t ejsify -t browserify-data iframe.js -o build/iframe.js
 
+clean:
+	rm -rf build

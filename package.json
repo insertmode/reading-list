@@ -14,7 +14,7 @@
     "type": "git",
     "url": "hhttps://github.com/insertmode/reading-list.git"
   },
-  "main": "index.js",
+  "main": "make.js",
   "scripts": {
     "server": "beefy iframe.js 9966 -- -t ejsify -t browserify-data",
     "build": "make readinglist",
@@ -43,6 +43,7 @@
     "uglifyify": "^2.5.0",
     "browserify-data": "^0.2.0",
     "insert-css": "insertmode/insert-css",
-    "stylify": "^0.1.5"
+    "stylify": "^0.1.5",
+    "concat-stream": "^1.4.6"
   }
 }
