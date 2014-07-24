@@ -43,8 +43,9 @@
     "uglifyify": "^2.5.0",
     "browserify-data": "^0.2.0",
     "insert-css": "insertmode/insert-css",
-    "stylify": "^0.1.5",
+    "stylify": "insertmode/stylify",
     "concat-stream": "^1.4.6",
-    "marked": "^0.3.2"
+    "marked": "^0.3.2",
+    "nib": "^1.0.3"
   }
 }

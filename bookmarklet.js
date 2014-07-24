@@ -2,6 +2,7 @@
 var render = require('./render');
 var match = require('./match');
 var styles = require('./bookmarklet.styl');
+var hostStyles = require('./host.styl');
 var insertCSS = require('insert-css');
 
 var ctx = READING_LIST_DATA;
@@ -10,12 +11,13 @@ var html = render(ctx);
 console.log(html);
 
 var container = document.createElement('iframe');
-container.setAttribute('style', "top:0px;left:0px;z-index:30000;position:fixed;width:300px;height:100%;background-color:white;border: none;");
+container.setAttribute("id", "_SHECODES_sidebar_container");
 document.body.appendChild(container);
-document.body.style.marginLeft = '300px';
+
 var doc = container.contentDocument;
 doc.body.innerHTML = html;
 
+insertCSS(hostStyles);
 insertCSS(styles, {document: doc});
 
 var m  = match(ctx, document.location.href);
