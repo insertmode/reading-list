@@ -1,5 +1,6 @@
 @import 'nib'
 @import 'constants'
+DistanceFactor=1.2
 
 iframe#_SHECODES_sidebar_container
     transform-origin:100% 0%
@@ -15,23 +16,23 @@ iframe#_SHECODES_sidebar_container
 @keyframes _SHECODES_flip {
     0% {
         animation-timing-function: ease-in
-        margin-left: 0px
+        border-left-width: 0px
         background-position: 0% -30%;
     }
     25% {
         animation-timing-function: ease-out
         background-position: 0% 0%;
-        margin-left: SBWidth
+        border-left-width: SBWidth
     }
     75% {
         animation-timing-function: ease-in
         background-position: 0% -30%;
-        margin-left: 2*SBWidth
+        border-left-width: DistanceFactor*SBWidth
     }
     100% {
         animation-timing-function: ease-in-out
         background-position: 0% -30%
-        margin-left: SBWidth
+        border-left-width: SBWidth
     }
 }
 
@@ -48,7 +49,7 @@ iframe#_SHECODES_sidebar_container
     }
     75% {
         animation-timing-function: ease-in
-        left: SBWidth
+        left: ( DistanceFactor - 1 )*SBWidth
         transform: rotateY(0deg)
     }
     100% {
@@ -64,7 +65,8 @@ iframe#_SHECODES_sidebar_container
     animation-direction: alternate;
 
 body._SHECODES_pushed
-    margin-left: SBWidth
-    //background: linear-gradient(left, rgba(0,0,0,0.5), 50% white);
+    border-left-style: solid
+    border-left-color: #444
+    border-left-width: SBWidth
     animation: _SHECODES_flip Duration
     animation-direction: alternate;
