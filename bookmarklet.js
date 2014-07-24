@@ -30,3 +30,5 @@ if (m !== null) {
         page.setAttribute('class', 'page current');
     }
 }
+document.body.classList.add('_SHECODES_pushed');
+
