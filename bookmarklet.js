@@ -16,6 +16,10 @@ document.body.appendChild(container);
 
 var doc = container.contentDocument;
 doc.body.innerHTML = html;
+var filter = doc.createElement('div');
+filter.classList.add('filter');
+doc.body.appendChild(filter);
+filter.classList.add('foldout');
 
 insertCSS(hostStyles);
 insertCSS(styles, {document: doc});

@@ -1,6 +1,5 @@
 @import 'nib'
-SBWidth = 300px
-Duration = 2s
+@import 'constants'
 
 iframe#_SHECODES_sidebar_container
     transform-origin:100% 0%
@@ -40,12 +39,12 @@ iframe#_SHECODES_sidebar_container
     0% {
         animation-timing-function: ease-in
         left: 0px
-        transform: rotateY(90deg)
+        transform: rotateY(-90deg)
     }
     25% {
         animation-timing-function: ease-out
         left: 0px
-        transform: rotateY(90deg)
+        transform: rotateY(-90deg)
     }
     75% {
         animation-timing-function: ease-in

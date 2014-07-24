@@ -1,9 +1,52 @@
+@import 'nib'
+@import 'constants'
+
+Dark = rgba(0,0,5,0.5)
+Light = rgba(255,255,255,0.9)
+Falloff = 40px
+Saturated = 20px
+
 body
     background-color: #CCC
     font-family: 'helvetica'
     margin: 0
     padding: 0
+    /* background-color: #7d8579; */
+    background-image: url(images/cloth_0.jpg);
 
+@keyframes phong {
+    0% {
+        background-position-x: -100px
+        opacity: 1
+    }
+    25% {
+        background-position-x: -100px
+        opacity: 1
+    }
+    75% {
+        background-position-x: SBWidth
+        opacity: 0
+    }
+    100% {
+        background-position-x: SBWidth
+        opacity: 0
+    }
+}
+
+
+.filter
+    position: absolute
+    left: 0px
+    top: 0px
+    z-index: 10
+    width: 200%
+    height: 100%
+    background-image: linear-gradient(left, Dark, Falloff Light, Falloff+Saturated Light, Falloff*2+Saturated Dark);
+    background-repeat: repeat-x
+
+.filter.foldout
+    animation: phong Duration
+    
 h1
     font-size: 1em
     display: inline
