@@ -5,7 +5,10 @@ var styles = require('./bookmarklet.styl');
 var hostStyles = require('./host.styl');
 var insertCSS = require('insert-css');
 var constants = require('./constants');
-console.log(constants);
+//console.log(constants);
+
+var duration = parseFloat(constants.duration) * 1000;
+console.log(duration);
 
 var ctx = READING_LIST_DATA;
 ctx.link_target = '_parent';
@@ -21,7 +24,10 @@ var filter = doc.createElement('div');
 filter.classList.add('filter');
 doc.body.appendChild(filter);
 filter.classList.add('foldout');
-
+// remove filter div after animation is done
+setTimeout(function() {
+    doc.body.removeChild(filter);
+}, duration);
 insertCSS(hostStyles);
 insertCSS(styles, {document: doc});
 
