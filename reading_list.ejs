@@ -11,6 +11,12 @@
                 <span class="counts">
                     (<%= resource.pages.length %> pages / <%= resource.noteCount %> notes)
                 </span>
+                <ul class="pageControl">
+                <% resource.notes.forEach(function(b) { %>
+                    <li <%- b ? 'class="note"' : ''%>></li>
+                <% }); %>
+                </ul>
+                
                 <% resource.pages.forEach(function(page) { %>
                     <div class="page">
                         <%- page.description %>

@@ -32,6 +32,10 @@ if (m !== null) {
     if (typeof m.page !== 'undefined') {
         var page = step.getElementsByClassName('page')[m.page];
         page.setAttribute('class', 'page current');
+        var pageControl = step.getElementsByClassName('pageControl')[0];
+        var dot = pageControl.getElementsByTagName('li')[m.page];
+        dot.className += ' current';
+
     }
 }
 document.body.classList.add('_SHECODES_pushed');
