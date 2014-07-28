@@ -33,7 +33,6 @@
     "lab": "^3.2.1"
   },
   "dependencies": {
-    "brfs": "^1.1.2",
     "browserify": "^4.1.10",
     "ejsify": "^0.1.0",
     "js-yaml": "^3.1.0",

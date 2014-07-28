@@ -4,11 +4,12 @@ var match = require('./match');
 var styles = require('./bookmarklet.styl');
 var hostStyles = require('./host.styl');
 var insertCSS = require('insert-css');
+var constants = require('./constants');
+console.log(constants);
 
 var ctx = READING_LIST_DATA;
 ctx.link_target = '_parent';
 var html = render(ctx);
-console.log(html);
 
 var container = document.createElement('iframe');
 container.setAttribute("id", "_SHECODES_sidebar_container");
