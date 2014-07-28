@@ -8,9 +8,9 @@
             <a href="<%= resource.entry %>" target="<%=typeof link_target === 'undefined'? '_self' : link_target %>"><h1><%= resource.title  %></h1></a>
             <div class="description"><%- resource.description %></div>
             <% if (resource.pages) { %>
-                <span class="counts">
+                <div class="counts">
                     (<%= resource.pages.length %> pages / <%= resource.noteCount %> notes)
-                </span>
+                </div>
                 <ul class="pageControl">
                 <% resource.notes.forEach(function(b) { %>
                     <li <%- b ? 'class="note"' : ''%>></li>
