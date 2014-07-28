@@ -7,6 +7,7 @@ var resumer = require('resumer');
 var ejs = require('ejs');
 var inspect = require('util').inspect;
 var marked = require('marked');
+var render = require('./render');
 
 function markItDown(o) {
     for(var key in o) {
@@ -52,11 +53,10 @@ function compileReadingList(yamlInput, opts, cb) {
             src: src
         };
         var bookmarklet = ejs.render(bookmarkTemplate, o);
-        var readinglist_template = fs.readFileSync(__dirname + '/reading_list.ejs', 'utf8');
         opts.resources = yamlDocs;
         opts.bookmarklet = bookmarklet;
 
-        var html = ejs.render(readinglist_template, opts);
+        var html = render(opts);
         return cb(null, html);
     });
 }
